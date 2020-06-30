@@ -1,0 +1,17 @@
+
+
+.featured-card__header--background{
+  background:rgba(0,0,0,0.7);
+}
+.featured-card__title{
+  color:#ffffff;
+}
+.featured-card__action{
+  color:#a6b1f3;
+}
+.medium-up--one-third a:hover{
+  color:#f3dc9a;
+}
+.medium-up--one-half a:hover{
+  color:#f3dc9a;
+}
