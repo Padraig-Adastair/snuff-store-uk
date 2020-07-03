@@ -9,7 +9,7 @@
   {% section 'featured-products-subsection' %}
 </div>
 {% comment %}
-  Collections are listed here.
+  Collections are listed here. Here is a change. Ok here is a change.
 {% endcomment %}
 
 {% capture uses_minimal_framework %}{% include 'product-loop' %}{% endcapture %}
@@ -25,9 +25,9 @@
 {% assign image_size = 'large' %}
 
 {% if linklists[page.handle].links.size > 0 %}
-    
+
   {% assign number_of_links = 0 %}
-    
+
   <div class="grid-uniform{% if uses_minimal_framework %} row{% endif %} clearfix">
 
     {% for link in linklists[page.handle].links %}
@@ -36,7 +36,7 @@
 
         {% comment %}
         If we have a collection link.
-        {% endcomment %}   
+        {% endcomment %}
 
         {% assign collection = link.object %}
         {% assign number_of_links = number_of_links | plus: 1 %}
@@ -60,7 +60,7 @@
             <a href="{{ link.url }}" class="collection-item__title">{{ link.title }}</a>
           </p>
         </div>
-    
+
         {% if uses_minimal_framework %}
           {% cycle 'clear-item': '', '', '', '<div style="clear:both"></div>' %}
         {% endif %}
@@ -73,7 +73,7 @@
 
         {% assign number_of_links = number_of_links | plus: 1 %}
 
-        {% assign linked_page = link.object %}                    
+        {% assign linked_page = link.object %}
         {% assign have_image = false %}
 
         {% comment %}
@@ -87,7 +87,7 @@
           {% assign src = src[1] | split: '"' | first %}
           {% capture image_suffix %}_{{ image_size }}.{% endcapture %}
           {% assign src = src | replace: '_small.', image_suffix | replace: '_compact.', image_suffix | replace: '_medium.', image_suffix | replace: '_large.', image_suffix | replace: '_grande.', image_suffix %}
-        
+
         {% comment %}
           If the page contains no image, and that page features collections, let's grab the image of the first
           collection on it.
@@ -120,7 +120,7 @@
             <a href="{{ link.url }}" class="collection-item__title">{{ link.title }}</a>
           </p>
         </div>
-    
+
         {% if uses_minimal_framework %}
           {% cycle 'clear-item': '', '', '', '<div style="clear:both"></div>' %}
         {% endif %}
@@ -149,7 +149,7 @@
 <div class="grid">
   <div class="grid__item grid-item rte text-center">
     <p>
-      You do not have a link list with a handle set to <kbd>{{ page.handle }}</kbd>, or you do and it's empty. 
+      You do not have a link list with a handle set to <kbd>{{ page.handle }}</kbd>, or you do and it's empty.
       Go ahead and create a link list called <b>{{ page.title }}</b> on your <a href="/admin/links" target="_blank">Navigation page</a> and populate that link list with links that point to collections, to see collections listed here.
       Make sure the link list also has a handle set to <kbd>{{ page.handle }}</kbd>.
     </p>
@@ -159,7 +159,7 @@
 {% endif %}
 
 <style>
-  kbd { 
+  kbd {
     background-color: #FBFBE4;
     padding: 1px 4px;
     border-radius: 3px;
