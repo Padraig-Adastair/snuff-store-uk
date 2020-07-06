@@ -1,0 +1,24 @@
+{%- if settings.badge_enable and product.available and product.compare_at_price > product.price -%}
+
+<div class="badge"><span>{{ 'products.product.savings' | t }}<br/>
+
+{%- if settings.badge_percentage_enable and product.variants.size <= 1 -%}
+{{ product.compare_at_price | minus: product.price | times: 100 | divided_by: product.compare_at_price | append: '%' }}
+{%- else -%}
+{{ product.compare_at_price | minus: product.price | money }}
+{% endif %}
+
+{% if settings.badge_percentage_enable and product.price_varies %}
+
+{%- for variant in product.variants -%}
+{% if variant.compare_at_price > variant.price %}
+{{ variant.compare_at_price | minus: variant.price | times: 100 | divided_by: variant.compare_at_price | append: '%' }}
+{%- else -%}
+{{ variant.compare_at_price | minus: variant.price | money }}
+{%- endif -%}
+{%- endfor -%}
+
+{%- endif -%}
+  </span></div>
+
+{%- endif -%}
